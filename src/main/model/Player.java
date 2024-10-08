@@ -6,28 +6,22 @@ public class Player {
   protected String name;
   protected String position;
   protected int evaluation;
-  protected Boolean wentDrinking;
+  protected Boolean drinkingStatus;
   protected double attendaceTraining;
-  protected int peformanceTraining;
   protected Boolean injuryStatus;
   protected Boolean sleepingStatus;
+  protected int totalTraining;
+  protected int numTrainingAttended;
   protected int goal;
 
-  // Requires: none
+  // Requires: evaluation to be a number from 1 to 5
   // Modifies: this
   // Effects: set the fields to the initial state
   public Player(String name, String position, int evaluation) {
 
   }
 
-  // Requires: value of attendanceTraining and injuryStatus to have a value of
-  // either false or true
-  // modifies: none
-  // Effects: returns if the player is available for the next game or not. This
-  // will be decided for the
-  public Boolean isAvailable() {
-    return false;
-  }
+ 
 
   // Requires: int in the parameter has to be a positve integer
   // modifies: this
@@ -64,6 +58,15 @@ public class Player {
     //
   }
 
+   // Requires: value of attendanceTraining and injuryStatus to have a value of
+  // either false or true
+  // modifies: none
+  // Effects: returns if the player is available for the next game or not. This
+  // will be decided for the
+  public Boolean isAvailable() {
+    return false;
+  }
+
   public String getName() {
     return "";
 
@@ -83,25 +86,30 @@ public class Player {
     return false;
   }
 
-  public double getattendanceTraining() {
+  public double getAttendanceTraining() {
     return 0;
 
   }
 
-  public int getpeformanceTraining() {
-    return 0;
 
-  }
-
-  public Boolean getinjuryStatus() {
+  public Boolean getInjuryStatus() {
     return false;
   }
 
-  public Boolean getsleepingStatus() {
+  public Boolean getSleepingStatus() {
     return false;
   }
 
   public int getGoal() {
+    return 0;
+  }
+
+  public int getTotalTraining(){
+    return 0;
+
+  }
+
+  public int getNumTrainingAttended(){
     return 0;
   }
 
