@@ -7,15 +7,15 @@ public class Player {
   protected String position;
   protected int evaluation;
   protected Boolean wentDrinking;
-  protected int attendaceTraining;
+  protected double attendaceTraining;
   protected int peformanceTraining;
   protected Boolean injuryStatus;
   protected Boolean sleepingStatus;
-  protected int Goal;
+  protected int goal;
 
   // Requires: none
   // Modifies: this
-  // Effects: sets some of the fields
+  // Effects: set the fields to the initial state
   public Player(String name, String position, int evaluation) {
 
   }
@@ -32,8 +32,36 @@ public class Player {
   // Requires: int in the parameter has to be a positve integer
   // modifies: this
   // Effects add number of the goals in the parameter to the goal field
-  public void Score(int goal) {
+  public void score(int goal) {
     // stub
+  }
+
+  // Requires: none
+  // Modifies: this
+  // Effects: changes the injury status to true to false
+  public void catchInjury(){
+    // stub
+  }
+  // Requires: none
+  // Modifies: this
+  // Effects: changes the injuryStatus to false to true
+  public void healInjury(){
+    //stub
+  }
+
+  // Requires: none
+  // Modifies: this
+  // Effects: Changes the the attendance rate add 1 to the 
+  // attendance and calculates the new rate and changes the attendanceTraining field
+  public void attendTraining(){
+    //
+  }
+  // Requires: none
+  // Modifies: this
+  // Effects: Changes the the attendance rate add 0 to the 
+  // attendance and calculates the new rate and changes the attendanceTraining field
+  public void missTraining(){
+    //
   }
 
   public String getName() {
@@ -55,7 +83,7 @@ public class Player {
     return false;
   }
 
-  public int getattendanceTraining() {
+  public double getattendanceTraining() {
     return 0;
 
   }
