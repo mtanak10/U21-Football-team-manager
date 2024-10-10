@@ -7,7 +7,7 @@ public class Player {
   protected String position;
   protected int evaluation;
   protected Boolean drinkingStatus;
-  protected double attendaceTraining;
+  protected double attendanceTraining;
   protected Boolean injuryStatus;
   protected Boolean sleepingStatus;
   protected int totalTraining;
@@ -18,99 +18,121 @@ public class Player {
   // Modifies: this
   // Effects: set the fields to the initial state
   public Player(String name, String position, int evaluation) {
+    this.name = name;
+    this.position = position;
+    this.evaluation = evaluation;
+    this.drinkingStatus = false;
+    this.attendanceTraining = 0;
+    this.injuryStatus = false;
+    this.sleepingStatus = false;
+    this.totalTraining = 0;
+    this.numTrainingAttended = 0; 
+    this.goal = 0;
+
 
   }
-
- 
 
   // Requires: int in the parameter has to be a positve integer
   // modifies: this
   // Effects add number of the goals in the parameter to the goal field
   public void score(int goal) {
-    // stub
+    this.goal = this.goal += goal;
   }
 
   // Requires: none
   // Modifies: this
   // Effects: changes the injury status to true to false
-  public void catchInjury(){
-    // stub
+  public void catchInjury() {
+    this.injuryStatus = true;
   }
+
   // Requires: none
   // Modifies: this
   // Effects: changes the injuryStatus to false to true
-  public void healInjury(){
-    //stub
+  public void healInjury() {
+    this.injuryStatus = false;
   }
 
   // Requires: none
   // Modifies: this
-  // Effects: Changes the the attendance rate add 1 to the 
-  // attendance and calculates the new rate and changes the attendanceTraining field
-  public void attendTraining(){
-    //
-  }
-  // Requires: none
-  // Modifies: this
-  // Effects: Changes the the attendance rate add 0 to the 
-  // attendance and calculates the new rate and changes the attendanceTraining field
-  public void missTraining(){
+  // Effects: Changes the the attendance rate add 1 to the
+  // attendance and calculates the new rate and changes the attendanceTraining
+  // field
+  public void attendTraining() {
+    this.numTrainingAttended += 1;
+    this.totalTraining += 1;
+    this.attendanceTraining = (this.numTrainingAttended/totalTraining);
     //
   }
 
-   // Requires: value of attendanceTraining and injuryStatus to have a value of
+  // Requires: none
+  // Modifies: this
+  // Effects: Changes the the attendance rate add 0 to the
+  // attendance and calculates the new rate and changes the attendanceTraining
+  // field
+  public void missTraining() {
+    this.totalTraining++;
+    this.attendanceTraining = this.numTrainingAttended/this.totalTraining;
+    
+    //
+  }
+
+  // Requires: value of attendanceTraining and injuryStatus to have a value of
   // either false or true
   // modifies: none
   // Effects: returns if the player is available for the next game or not. This
   // will be decided for the
   public Boolean isAvailable() {
-    return false;
+    if(this.attendanceTraining >= 0.5 && this.injuryStatus == false){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public String getName() {
-    return "";
+    return this.name;
 
   }
 
   public int getEvaluation() {
-    return 0;
+    return this.evaluation;
 
   }
 
   public String getPosition() {
-    return "";
+    return this.position;
 
   }
 
   public Boolean getDrinkingStatus() {
-    return false;
+    return this.drinkingStatus;
   }
 
   public double getAttendanceTraining() {
-    return 0;
+    return this.attendanceTraining;
 
   }
 
-
   public Boolean getInjuryStatus() {
-    return false;
+    return this.injuryStatus;
   }
 
   public Boolean getSleepingStatus() {
-    return false;
+    return this.sleepingStatus;
   }
 
   public int getGoal() {
-    return 0;
+    return this.goal;
   }
 
-  public int getTotalTraining(){
-    return 0;
+  public int getTotalTraining() {
+    return this.totalTraining;
 
   }
 
-  public int getNumTrainingAttended(){
-    return 0;
+  public int getNumTrainingAttended() {
+    return this.numTrainingAttended;
   }
 
 }

@@ -15,6 +15,7 @@ public class TeamTest {
   private Team team1;
   private Player player1;
   private Player player2;
+  private Player player3;
 
 
     
@@ -23,6 +24,7 @@ public class TeamTest {
       team1 = new Team();
       player1 = new Player("John", "Defender", 5);
       player2 = new Player("Sam", "Foward", 4);
+      player3 = new Player("Josh", "MidFielder", 4);
     }
 
     @Test
@@ -45,10 +47,16 @@ public class TeamTest {
     void testRemovePlayer(){
       team1.addPlayer(player1);
       team1.addPlayer(player2);
+      team1.addPlayer(player3);
+      assertEquals(3, team1.getTotalPlayers());
       team1.removePlayer("John");
-      assertEquals(1, team1.getTotalPlayers());
+      assertEquals(2, team1.getTotalPlayers());
       team1.removePlayer("Sam");
-      assertEquals(0, team1.getTotalPlayers());
+      assertEquals(1, team1.getTotalPlayers());
+
+
+
+    
 
     }
 
