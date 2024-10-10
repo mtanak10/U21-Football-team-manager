@@ -10,7 +10,7 @@ public class Player {
   protected double attendanceTraining;
   protected Boolean injuryStatus;
   protected Boolean sleepingStatus;
-  protected double totalTraining;       // JUST FOR ACCUMULATION
+  protected double totalTraining; // JUST FOR ACCUMULATION
   protected double numTrainingAttended; // JUST FOR ACCUMULATION
   protected int goal;
 
@@ -54,32 +54,31 @@ public class Player {
 
   // Requires: none
   // Modifies: this
-  // Effects: changes the drinking status to true 
+  // Effects: changes the drinking status to true
   public void drink() {
     this.drinkingStatus = true;
   }
 
   // Requires: none
   // Modifies: this
-  // Effects: changes the drinkingStatus to false 
+  // Effects: changes the drinkingStatus to false
   public void dontDrink() {
     this.drinkingStatus = false;
   }
 
-    // Requires: none
+  // Requires: none
   // Modifies: this
-  // Effects: changes the sleeping status to true 
+  // Effects: changes the sleeping status to true
   public void sleep() {
-    this.drinkingStatus = true;
+    this.sleepingStatus = true;
   }
 
   // Requires: none
   // Modifies: this
-  // Effects: changes the sleepingStatus to false 
+  // Effects: changes the sleepingStatus to false
   public void dontSleep() {
-    this.drinkingStatus = false;
+    this.sleepingStatus = false;
   }
-
 
   // Requires: none
   // Modifies: this
@@ -105,7 +104,7 @@ public class Player {
     //
   }
 
-  public void changeEvaluation(int newEv){
+  public void changeEvaluation(int newEv) {
     this.evaluation = newEv;
   }
 
@@ -115,7 +114,7 @@ public class Player {
   // Effects: returns if the player is available for the next game or not. This
   // will be decided for the
   public Boolean isAvailable() {
-    double x = 1.0/2.0;
+    double x = 1.0 / 2.0;
     if (this.attendanceTraining >= x && this.injuryStatus == false) {
       return true;
     } else {

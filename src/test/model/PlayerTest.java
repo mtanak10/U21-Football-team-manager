@@ -63,9 +63,11 @@ public class PlayerTest {
     player1.attendTraining();
     assertEquals(1, player1.getAttendanceTraining());
     player1.missTraining();
-    assertEquals(2 / 3, player1.getAttendanceTraining());
-    player1.missTraining();
-    assertEquals(3 / 4, player1.getAttendanceTraining());
+    double expected1 = 2.0 / 3.0;
+    assertEquals(expected1, player1.getAttendanceTraining());
+    player1.attendTraining();
+    double expected2 = 3.0 / 4.0;
+    assertEquals(expected2, player1.getAttendanceTraining());
 
   }
 
@@ -74,10 +76,52 @@ public class PlayerTest {
     player1.attendTraining();
     assertEquals(1, player1.getAttendanceTraining());
     player1.missTraining();
-    assertEquals(1/2, player1.getAttendanceTraining());
+    assertEquals(0.5, player1.getAttendanceTraining());
     player1.missTraining();
-    assertEquals(1/3, player1.getAttendanceTraining());
-    
+    double expected = 1.0 / 3.0;
+    assertEquals(expected, player1.getAttendanceTraining());
+
+  }
+
+  @Test
+  void testChangeEvaluation() {
+    player1.changeEvaluation(1);
+    assertEquals(1, player1.getEvaluation());
+  }
+
+  @Test
+  void testDrink() {
+    player1.drink();
+    assertEquals(true, player1.getDrinkingStatus());
+    player1.drink();
+    assertEquals(true, player1.getDrinkingStatus());
+
+  }
+
+  @Test
+  void testDontDrink() {
+    player1.drink();
+    player1.dontDrink();
+    assertEquals(false, player1.getDrinkingStatus());
+    player1.dontDrink();
+    assertEquals(false, player1.getDrinkingStatus());
+  }
+
+  @Test
+  void testSleep() {
+    player1.sleep();
+    assertEquals(true, player1.getSleepingStatus());
+    player1.sleep();
+    assertEquals(true, player1.getSleepingStatus());
+  }
+
+  @Test
+  void testDontSleep() {
+    player1.sleep();
+    player1.dontSleep();
+    assertEquals(false, player1.getSleepingStatus());
+    player1.dontDrink();
+    assertEquals(false, player1.getSleepingStatus());
   }
 
   @Test
@@ -94,9 +138,6 @@ public class PlayerTest {
     player1.missTraining();
 
     assertEquals(false, player1.isAvailable());
-
-
-
 
   }
 
