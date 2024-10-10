@@ -9,10 +9,12 @@ A football team's management application to make the managers decision easy and 
 - As a user, I want to be able to add a player to the player's list
 - As a user, I want to be able to classify players with each positions
 - As a user, I want to be able to visiblly compare the player's fitness
-- As a user, I want to be able to remove a plaery from the player's list
+- As a user, I want to be able to remove a player from the player's list
 - As a user, I want to be able to add a fitness condition for each players everyweek. 
 - As a user, I want to be able to have multiple conditions that will decide a player's condition
 - As a user, I want to be able to update player fitness data easily after each practice or event.
+- As a user, I want to be able to update player's scoring record and keep track of that.
+- As a user, I want to be able to compare the evaluation of each players.
 
 
 
