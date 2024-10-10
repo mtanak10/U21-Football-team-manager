@@ -10,8 +10,8 @@ public class Player {
   protected double attendanceTraining;
   protected Boolean injuryStatus;
   protected Boolean sleepingStatus;
-  protected int totalTraining;
-  protected int numTrainingAttended;
+  protected double totalTraining;       // JUST FOR ACCUMULATION
+  protected double numTrainingAttended; // JUST FOR ACCUMULATION
   protected int goal;
 
   // Requires: evaluation to be a number from 1 to 5
@@ -26,9 +26,8 @@ public class Player {
     this.injuryStatus = false;
     this.sleepingStatus = false;
     this.totalTraining = 0;
-    this.numTrainingAttended = 0; 
+    this.numTrainingAttended = 0;
     this.goal = 0;
-
 
   }
 
@@ -55,13 +54,42 @@ public class Player {
 
   // Requires: none
   // Modifies: this
+  // Effects: changes the drinking status to true 
+  public void drink() {
+    this.drinkingStatus = true;
+  }
+
+  // Requires: none
+  // Modifies: this
+  // Effects: changes the drinkingStatus to false 
+  public void dontDrink() {
+    this.drinkingStatus = false;
+  }
+
+    // Requires: none
+  // Modifies: this
+  // Effects: changes the sleeping status to true 
+  public void sleep() {
+    this.drinkingStatus = true;
+  }
+
+  // Requires: none
+  // Modifies: this
+  // Effects: changes the sleepingStatus to false 
+  public void dontSleep() {
+    this.drinkingStatus = false;
+  }
+
+
+  // Requires: none
+  // Modifies: this
   // Effects: Changes the the attendance rate add 1 to the
   // attendance and calculates the new rate and changes the attendanceTraining
   // field
   public void attendTraining() {
     this.numTrainingAttended += 1;
     this.totalTraining += 1;
-    this.attendanceTraining = (this.numTrainingAttended/totalTraining);
+    this.attendanceTraining = (this.numTrainingAttended / totalTraining);
     //
   }
 
@@ -72,9 +100,13 @@ public class Player {
   // field
   public void missTraining() {
     this.totalTraining++;
-    this.attendanceTraining = this.numTrainingAttended/this.totalTraining;
-    
+    this.attendanceTraining = this.numTrainingAttended / this.totalTraining;
+
     //
+  }
+
+  public void changeEvaluation(int newEv){
+    this.evaluation = newEv;
   }
 
   // Requires: value of attendanceTraining and injuryStatus to have a value of
@@ -83,7 +115,8 @@ public class Player {
   // Effects: returns if the player is available for the next game or not. This
   // will be decided for the
   public Boolean isAvailable() {
-    if(this.attendanceTraining >= 0.5 && this.injuryStatus == false){
+    double x = 1.0/2.0;
+    if (this.attendanceTraining >= x && this.injuryStatus == false) {
       return true;
     } else {
       return false;
@@ -126,12 +159,12 @@ public class Player {
     return this.goal;
   }
 
-  public int getTotalTraining() {
+  public double getTotalTraining() {
     return this.totalTraining;
 
   }
 
-  public int getNumTrainingAttended() {
+  public double getNumTrainingAttended() {
     return this.numTrainingAttended;
   }
 
