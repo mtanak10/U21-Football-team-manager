@@ -125,7 +125,7 @@ public class ManagementApp {
         for (Player player : team.getTeam()) {
 
             System.out.println("");
-            System.out.println("\tName: " + player.getName() + "   " + "Position: " + player.getPosition());
+            System.out.println("\tName: " + player.getName() + "   " + "Position: " + player.getPosition() + " Availability: " + player.isAvailable());
 
         }
 
