@@ -15,6 +15,8 @@ A football team's management application to make the managers decision easy and 
 - As a user, I want to be able to update player fitness data easily after each practice or event.
 - As a user, I want to be able to update player's scoring record and keep track of that.
 - As a user, I want to be able to compare the evaluation of each players.
+- As a user, I want to be able to save the list of players and their condition to the file
+- As a user, I want to be able to load my team list from file.
 
 
 
