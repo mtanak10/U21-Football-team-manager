@@ -1,8 +1,14 @@
 package model;
 
 import java.util.*;
+// Team an Arraylist of playeys
 
-public class Team {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import persistence.Writable;
+
+public class Team implements Writable {
 
     private ArrayList<Player> team;
 
@@ -38,4 +44,14 @@ public class Team {
         return this.team.size();
     }
 
+    // Effects: Team to JsonObject
+    @Override
+    public JSONObject toJson() {
+        return null;
+    }
+
+    // EFFECTS: returns the list of players as a JSONArray
+    public JSONArray teamToJson() {
+       return null;
+    }
 }

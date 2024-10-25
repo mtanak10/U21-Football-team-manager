@@ -1,6 +1,10 @@
 package model;
 
-public class Player {
+import org.json.JSONObject;
+import persistence.Writable;
+
+// Player class with basic info of player
+public class Player implements Writable {
     protected String name;
     protected String position;
     protected int evaluation;
@@ -163,6 +167,12 @@ public class Player {
 
     public double getNumTrainingAttended() {
         return this.numTrainingAttended;
+    }
+
+    // Effects: to return the Json object that was written
+    @Override
+    public JSONObject toJson() {
+        return null;
     }
 
 }
