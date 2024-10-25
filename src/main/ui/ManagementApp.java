@@ -2,18 +2,33 @@ package ui;
 
 import java.util.Scanner;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import model.Team;
 import model.Player;
 
 // Adapted from Teller App ui
 
+// class for User Interface for the app to add and remove the players
 public class ManagementApp {
+    private static final String JSON_STORE = "./data/team.json";
     private Team team;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // constructor for the app and this wouald allow you to start running the app
     public ManagementApp() {
         team = new Team();
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runManagement();
 
     }
@@ -56,6 +71,8 @@ public class ManagementApp {
         System.out.println("\tt -> View the Team");
         System.out.println("\tc -> Check the Availability of a Player");
         System.out.println("\tu -> Update Fitness");
+        System.out.println("\ts -> Save the Team");
+        System.out.println("\tl -> Load the Team");
         System.out.println("\tq -> quit");
 
     }
@@ -71,6 +88,10 @@ public class ManagementApp {
             doCheckAvailability();
         } else if (command.equals("u")) {
             doUpdateFitness();
+        } else if (command.equals("s")) {
+            saveTeam();
+        } else if (command.equals("l")) {
+            loadTeam();
         } else {
             System.out.println("Try Again");
         }
@@ -109,6 +130,8 @@ public class ManagementApp {
 
     }
 
+    // modifies: team
+    // Effects: removes the player on the list of team
     public void doRemovePlayer() {
 
         System.out.println("Enter the name of the Player");
@@ -120,17 +143,20 @@ public class ManagementApp {
 
     }
 
+    // Effects: displays the list of team
     public void doViewTeam() {
         System.out.println("\tLIST OF PLAYERS");
         for (Player player : team.getTeam()) {
 
             System.out.println("");
-            System.out.println("\tName: " + player.getName() + "   " + "Position: " + player.getPosition() + " Availability: " + player.isAvailable());
+            System.out.println("\tName: " + player.getName() + "   " + "Position: " + player.getPosition()
+                    + " Availability: " + player.isAvailable());
 
         }
 
     }
 
+    // EFFECTS: shows if the chosen player is available or not
     public void doCheckAvailability() {
         System.out.println("Enter the name of the player");
         String name = input.next();
@@ -149,6 +175,7 @@ public class ManagementApp {
         System.out.println("DONE");
     }
 
+    // EFFECTS: shows the user select options for updating player's fitness
     public void doUpdateFitness() {
 
         System.out.println("\nSelect from:");
@@ -165,6 +192,8 @@ public class ManagementApp {
 
     }
 
+    // EFFECT: Lets to user select the option and goes into each detail calling each
+    // methods
     public void processUpdateCommand(String command) {
 
         if (command.equals("e")) {
@@ -183,6 +212,8 @@ public class ManagementApp {
 
     }
 
+    // Modifies: Chosen Player
+    // Effect: change the player's aquatic center
     public void doEvaluationChange() {
 
         Player player;
@@ -210,6 +241,7 @@ public class ManagementApp {
 
     }
 
+    // EFFECT: Change the drinking status for the player
     public void doChangeDrinking() {
         Player player;
 
@@ -237,6 +269,7 @@ public class ManagementApp {
         }
     }
 
+    // EFFECT: change the attending status for the player
     public void doAttend() {
         Player player;
 
@@ -271,6 +304,7 @@ public class ManagementApp {
 
     }
 
+    // EFFECT:Change the sleeping status of a player
     public void doChangeSleeping() {
         Player player;
 
@@ -302,6 +336,8 @@ public class ManagementApp {
 
     }
 
+    // Requires input > 0
+    // Effect: change the status of the plaer
     public void doScore() {
         Player player;
 
@@ -320,6 +356,18 @@ public class ManagementApp {
             }
 
         }
+
+    }
+
+    // Effects saves the Team to the file
+    public void saveTeam() {
+        // stub
+
+    }
+
+    // Effects loads the Team to the file
+    public void loadTeam() {
+        // stub
 
     }
 
