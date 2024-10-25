@@ -16,33 +16,34 @@ public class JsonWriter {
 
     // Effects: constructs writer to write to the destination file
     public JsonWriter(String destination) {
-        // stub
+        this.destination = destination;
     }
 
     // Modifies: this
     // Effects opens writer; it will throw FileNotFoundException
     public void open() throws FileNotFoundException {
-        //stub
+        writer = new PrintWriter(new File(destination));
     }
 
     // this
     // Effects: write JSON representation of workroom to file
     public void write(Team tm) {
-        // stub
+        JSONObject json = tm.toJson();
+        saveToFile(json.toString(TAB));
 
     }
 
     // Modifies: this
     // Effects closes the writer
     public void close() {
-        // stub
+        writer.close();
     }
 
     // Modifies: this
     // Effects: writes string to file
 
     private void saveToFile(String json) {
-        // stub
+        writer.print(json);
     }
 
 }

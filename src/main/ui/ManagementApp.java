@@ -361,13 +361,25 @@ public class ManagementApp {
 
     // Effects saves the Team to the file
     public void saveTeam() {
-        // stub
+        try {
+            jsonWriter.open();
+            jsonWriter.write(team);
+            jsonWriter.close();
+            System.out.println("Saved " + "Team" + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
 
     }
 
     // Effects loads the Team to the file
     public void loadTeam() {
-        // stub
+        try {
+            team = jsonReader.read();
+            System.out.println("Loaded " + "Team" + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
 
     }
 

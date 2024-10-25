@@ -47,11 +47,19 @@ public class Team implements Writable {
     // Effects: Team to JsonObject
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("team", teamToJson());
+        return json;
     }
 
     // EFFECTS: returns the list of players as a JSONArray
     public JSONArray teamToJson() {
-       return null;
+        JSONArray jsonArray = new JSONArray();
+
+        for (Player p : team) {
+            jsonArray.put(p.toJson());
+        }
+
+        return jsonArray;
     }
 }

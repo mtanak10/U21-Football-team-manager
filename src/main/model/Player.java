@@ -172,7 +172,19 @@ public class Player implements Writable {
     // Effects: to return the Json object that was written
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("position", position);
+        json.put("evaluation", evaluation);
+        json.put("drinkingStatus", drinkingStatus);
+        json.put("attendanceTraining", attendanceTraining);
+        json.put("Injury Status", injuryStatus);
+        json.put("Sleeping Status", sleepingStatus);
+        json.put("Total Training", totalTraining);
+        json.put("Num Training Attended", numTrainingAttended);
+        json.put("Goal", goal);
+
+        return json;
     }
 
 }

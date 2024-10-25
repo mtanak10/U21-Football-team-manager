@@ -20,37 +20,64 @@ public class JsonReader {
 
     // EFFECTS: constructs reader to read from source file
     public JsonReader(String source) {
-        // stub
+        this.source = source;
     }
 
     // EFFECTS: reads Team from file and returns it;
     // throws IOException if an error occurs reading data from file
     public Team read() throws IOException {
-        return null;
+        String jsonData = readFile(source);
+        JSONObject jsonObject = new JSONObject(jsonData);
+        return parseTeam(jsonObject);
     }
 
     // EFFECTS: reads source file as string and returns it
     private String readFile(String source) throws IOException {
-       return "";
+        StringBuilder contentBuilder = new StringBuilder();
+
+        try (Stream<String> stream = Files.lines(Paths.get(source), StandardCharsets.UTF_8)) {
+            stream.forEach(s -> contentBuilder.append(s));
+        }
+
+        return contentBuilder.toString();
     }
 
     // EFFECTS: parses workroom from JSON object and returns it
     private Team parseTeam(JSONObject jsonObject) {
-        return null;
+        Team tm = new Team();
+        addTeam(tm, jsonObject);
+        return tm;
 
     }
 
     // MODIFIES: tm
     // EFFECTS: parses list of player from JSON object and adds them to team
     private void addTeam(Team tm, JSONObject jsonObject) {
-        // stub
+        JSONArray jsonArray = jsonObject.getJSONArray("team");
+        for (Object json : jsonArray) {
+            JSONObject nextPlayer = (JSONObject) json;
+            addPlayer(tm, nextPlayer);
+
+        }
 
     }
 
     // MODIFIES: tm
     // EFFECTS: parses player from JSON object and adds it to team
     private void addPlayer(Team tm, JSONObject jsonObject) {
-        // stub
+        String name = jsonObject.getString("name");
+        String position = jsonObject.getString("position");
+        int evaluation = jsonObject.getInt("evaluation");
+        // Boolean drinkingStatus = jsonObject.getBoolean("drinkingStatus");
+        // double attendanceTraining = jsonObject.getDouble("attendanceTraining");
+        // Boolean injuryStatus = jsonObject.getBoolean("Injury Status");
+        // Boolean sleepingStatus = jsonObject.getBoolean("Sleeping Status");
+        // double totalTraining = jsonObject.getDouble("Total Training");
+        // double numTrainingAttended = jsonObject.getDouble("Num Training Attended");
+        // int goal = jsonObject.getInt("Goal");
+
+        Player player = new Player(name, position, evaluation);
+        tm.addPlayer(player);
 
     }
 
