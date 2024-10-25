@@ -106,8 +106,28 @@ public class Player implements Writable {
         //
     }
 
+    // Modifies: this
+    // Effect: change the evaluation field
     public void changeEvaluation(int newEv) {
         this.evaluation = newEv;
+    }
+
+    // Modifies: this
+    // Effect: change the total training
+    public void setTotalTraining(double total) {
+        this.totalTraining = total;
+    }
+
+    // Modifies: this
+    // Effect: change the total training
+    public void setNumTrainingAttendance(double total) {
+        this.numTrainingAttended = total;
+    }
+
+    // Modifies: this
+    // Effect: change the attendance rate
+    public void setAttendanceRate(double total) {
+        this.attendanceTraining = total;
     }
 
     // Requires: value of attendanceTraining and injuryStatus to have a value of

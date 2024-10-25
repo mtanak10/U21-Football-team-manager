@@ -68,16 +68,36 @@ public class JsonReader {
         String name = jsonObject.getString("name");
         String position = jsonObject.getString("position");
         int evaluation = jsonObject.getInt("evaluation");
-        // Boolean drinkingStatus = jsonObject.getBoolean("drinkingStatus");
-        // double attendanceTraining = jsonObject.getDouble("attendanceTraining");
-        // Boolean injuryStatus = jsonObject.getBoolean("Injury Status");
-        // Boolean sleepingStatus = jsonObject.getBoolean("Sleeping Status");
-        // double totalTraining = jsonObject.getDouble("Total Training");
-        // double numTrainingAttended = jsonObject.getDouble("Num Training Attended");
-        // int goal = jsonObject.getInt("Goal");
-
+        Boolean drinkingStatus = jsonObject.getBoolean("drinkingStatus");
+        double attendanceTraining = jsonObject.getDouble("attendanceTraining");
+        Boolean injuryStatus = jsonObject.getBoolean("Injury Status");
+        Boolean sleepingStatus = jsonObject.getBoolean("Sleeping Status");
+        double totalTraining = jsonObject.getDouble("Total Training");
+        double numTrainingAttended = jsonObject.getDouble("Num Training Attended");
+        int goal = jsonObject.getInt("Goal");
         Player player = new Player(name, position, evaluation);
+        if (drinkingStatus) {
+            player.drink();
+        }
+        if (injuryStatus) {
+            player.catchInjury();
+        }
+        if (sleepingStatus) {
+            player.drink();
+        }
+        changeAttendance(player, totalTraining, numTrainingAttended, attendanceTraining);
+
+        player.score(goal);
+
         tm.addPlayer(player);
+    }
+
+    // Effect: change the attendace status of the player
+    public void changeAttendance(Player player, double total, double numAttend, double rate) {
+
+        player.setTotalTraining(total);
+        player.setNumTrainingAttendance(numAttend);
+        player.setAttendanceRate(rate);
 
     }
 

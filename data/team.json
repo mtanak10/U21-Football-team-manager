@@ -2,11 +2,11 @@
     "evaluation": 3,
     "Goal": 0,
     "Sleeping Status": false,
-    "Total Training": 0,
-    "Num Training Attended": 0,
+    "Total Training": 1,
+    "Num Training Attended": 1,
     "name": "A",
     "drinkingStatus": false,
-    "attendanceTraining": 0,
-    "position": "GK",
+    "attendanceTraining": 1,
+    "position": "DF",
     "Injury Status": false
 }]}
