@@ -41,10 +41,10 @@ public class PlayerTest {
 
     @Test
     void testCatchInjury() {
-    player1.catchInjury();
-    assertEquals(true, player1.getInjuryStatus());
-    player1.catchInjury();
-    assertEquals(true, player1.getInjuryStatus());
+        player1.catchInjury();
+        assertEquals(true, player1.getInjuryStatus());
+        player1.catchInjury();
+        assertEquals(true, player1.getInjuryStatus());
     }
 
     @Test
