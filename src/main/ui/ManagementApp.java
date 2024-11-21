@@ -2,9 +2,6 @@ package ui;
 
 import java.util.Scanner;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import persistence.Writable;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
