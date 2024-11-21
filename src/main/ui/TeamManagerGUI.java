@@ -47,9 +47,11 @@ public class TeamManagerGUI extends JFrame {
         mainMenuPanel.add(updateButton);
 
         JButton saveButton = new JButton("Save the Team");
+        saveButton.addActionListener(new SaveTeamListener(team));
         mainMenuPanel.add(saveButton);
 
         JButton loadButton = new JButton("Load the Team");
+        loadButton.addActionListener(new LoadTeamListener(team));
         mainMenuPanel.add(loadButton);
 
         add(mainMenuPanel, BorderLayout.CENTER);
