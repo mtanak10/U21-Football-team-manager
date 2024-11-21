@@ -67,4 +67,15 @@ public class TeamTest {
         assertFalse(team1.containsName("a"));
     }
 
+    @Test 
+    void testGetPlayer(){
+        team1.addPlayer(player1);
+        team1.addPlayer(player2);
+        assertEquals(player1, team1.getPlayer("John"));
+        assertEquals(player2, team1.getPlayer("Sam"));
+        assertEquals(null, team1.getPlayer("Saa"));
+        
+
+    }
+
 }
