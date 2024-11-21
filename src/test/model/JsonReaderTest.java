@@ -4,11 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import model.Team;
 import persistence.JsonReader;
-import persistence.JsonWriter;
-import model.Player;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +19,7 @@ public class JsonReaderTest extends JsonTest {
         JsonReader reader = new JsonReader("./data/noSuchFile.json");
 
         try {
-            Team tm = reader.read();
+            reader.read();
             fail("Exception was expected");
 
         } catch (IOException e) {

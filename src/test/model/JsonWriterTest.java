@@ -4,11 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import model.Team;
 import persistence.JsonReader;
 import persistence.JsonWriter;
-import model.Player;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +17,6 @@ public class JsonWriterTest extends JsonTest {
     @Test
     void testWriteInvalidFile() {
         try {
-            Team tm = new Team();
             JsonWriter writer = new JsonWriter("./data/my\0illegal:fileName.json");
             writer.open();
 
