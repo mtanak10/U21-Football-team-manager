@@ -43,6 +43,7 @@ public class Team implements Writable {
     public int getTotalPlayers() {
         return this.team.size();
     }
+    
    // Effects this is for checking if a team has a player with the given string
     public Boolean containsName(String name) {
         for (Player p : team) {
@@ -71,5 +72,16 @@ public class Team implements Writable {
         }
 
         return jsonArray;
+    }
+
+    // returns string with given string
+    public Player getPlayer(String name) {
+        for (Player p : team) {
+            String n = p.getName();
+            if (n.equalsIgnoreCase(name)) {
+                return p;
+            } 
+        }
+        return null;
     }
 }
