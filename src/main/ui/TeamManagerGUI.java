@@ -8,18 +8,18 @@ import java.awt.*;
 
 
 
-public class TeamManagerUI extends JFrame {
+public class TeamManagerGUI extends JFrame {
 
     private Team team;
     private CardLayout cardLayOut;
 
 
     public static void main(String[] args) {
-        TeamManagerUI  ui = new TeamManagerUI();
+        TeamManagerGUI  ui = new TeamManagerGUI();
         ui.setVisible(true);
     }
 
-    public TeamManagerUI(){
+    public TeamManagerGUI(){
         team = new Team();
         cardLayOut = new CardLayout();
         setSize(600, 400);
@@ -44,6 +44,7 @@ public class TeamManagerUI extends JFrame {
         mainMenuPanel.add(viewTeamButton);
 
         JButton checkButton = new JButton("Check the Availability of a Player");
+        checkButton.addActionListener(new CheckActionListener(team));
         mainMenuPanel.add(checkButton);
 
         JButton updateButton = new JButton("Update Fitness");
