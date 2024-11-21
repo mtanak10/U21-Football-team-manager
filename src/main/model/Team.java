@@ -43,6 +43,16 @@ public class Team implements Writable {
     public int getTotalPlayers() {
         return this.team.size();
     }
+   // Effects this is for checking if a team has a player with the given string
+    public Boolean containsName(String name) {
+        for (Player p : team) {
+            String n = p.getName();
+            if (n.equalsIgnoreCase(name)) {
+                return true;
+            } 
+        }
+        return false;
+    }
 
     // Effects: Team to JsonObject
     @Override

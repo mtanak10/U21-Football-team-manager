@@ -58,4 +58,13 @@ public class TeamTest {
 
     }
 
+    @Test 
+    void testContainsName(){
+        team1.addPlayer(player1);
+        team1.addPlayer(player2);
+        assertTrue(team1.containsName("John"));
+        assertTrue(team1.containsName("Sam"));
+        assertFalse(team1.containsName("a"));
+    }
+
 }
