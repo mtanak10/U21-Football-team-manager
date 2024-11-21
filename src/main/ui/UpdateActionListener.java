@@ -60,6 +60,7 @@ public class UpdateActionListener implements ActionListener {
 
     }
 
+    @SuppressWarnings("methodlength")
     public void addUpdateFrame(Player p) {
         JFrame newFrame = new JFrame("Update Player Status");
         newFrame.setSize(400, 300);
@@ -97,6 +98,7 @@ public class UpdateActionListener implements ActionListener {
         newFrame.setVisible(true);
     }
 
+    @SuppressWarnings("methodlength")
     public void handleUpdateSubmit(
             JTextField evaluationField,
             JTextField drinkingStatusField,

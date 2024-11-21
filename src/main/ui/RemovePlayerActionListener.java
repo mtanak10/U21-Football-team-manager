@@ -19,7 +19,8 @@ public class RemovePlayerActionListener implements ActionListener {
     public RemovePlayerActionListener(Team team) {
         this.team = team;
     }
-
+    
+    @SuppressWarnings("methodlength")
     @Override
     public void actionPerformed(ActionEvent e) {
         JFrame removePlayerFrame = new JFrame();

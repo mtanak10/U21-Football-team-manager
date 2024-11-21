@@ -21,6 +21,7 @@ public class AddPlayerActionListener implements ActionListener {
         this.team = team;
     }
 
+    @SuppressWarnings("methodlength")
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Add Player button clicked"); // Debug statement

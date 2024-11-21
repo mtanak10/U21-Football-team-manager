@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
 import model.Team;
 import persistence.*;
 
-
-public class LoadTeamListener implements ActionListener{
+public class LoadTeamListener implements ActionListener {
 
     private Team team;
     private JsonReader jsonReader;
@@ -22,20 +21,20 @@ public class LoadTeamListener implements ActionListener{
 
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
-         System.out.println("Load Team button clicked"); // Debug statement
-            try {
-                Team loadedTeam = jsonReader.read();
-                team.getTeam().clear();
-                team.getTeam().addAll(loadedTeam.getTeam());
-                JOptionPane.showMessageDialog(null, "Team loaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println("Loaded Team from " + JSON_STORE);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Unable to load team from file.", "Error", JOptionPane.ERROR_MESSAGE);
-                System.out.println("Unable to read from file: " + JSON_STORE);
-            }
+        System.out.println("Load Team button clicked"); // Debug statement
+        try {
+            Team loadedTeam = jsonReader.read();
+            team.getTeam().clear();
+            team.getTeam().addAll(loadedTeam.getTeam());
+            JOptionPane.showMessageDialog(null, "Team loaded successfully!", "Success",
+                    JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Loaded Team from " + JSON_STORE);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Unable to load team from file.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
-    
+
 }

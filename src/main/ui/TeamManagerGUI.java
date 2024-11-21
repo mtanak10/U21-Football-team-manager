@@ -16,6 +16,7 @@ public class TeamManagerGUI extends JFrame {
         ui.setVisible(true);
     }
 
+    @SuppressWarnings("methodlength")
     public TeamManagerGUI() {
         team = new Team();
         cardLayOut = new CardLayout();
