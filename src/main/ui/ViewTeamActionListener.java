@@ -11,13 +11,12 @@ import javax.swing.JLabel;
 import model.Player;
 import model.Team;
 
-public class ViewTeamActionListener implements ActionListener{
+public class ViewTeamActionListener implements ActionListener {
 
     private JFrame viewTeamFrame;
     private Team team;
-    
 
-    public ViewTeamActionListener(Team team){
+    public ViewTeamActionListener(Team team) {
         viewTeamFrame = new JFrame("Add Player");
         this.team = team;
         viewTeamFrame.setSize(400, 300);
@@ -27,17 +26,18 @@ public class ViewTeamActionListener implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
 
         viewTeamFrame.getContentPane().removeAll();
 
         JLabel teamDisplay = new JLabel("Squad");
         viewTeamFrame.add(teamDisplay);
 
-         for (Player player : team.getTeam()) {
-            JLabel p = new JLabel("\tName: " + player.getName() + "   " + "Position: " + player.getPosition() + " Availability: " + player.isAvailable());
+        for (Player player : team.getTeam()) {
+            JLabel p = new JLabel("\tName: " + player.getName() + "   " + "Position: " + player.getPosition()
+                    + " Availability: " + player.isAvailable());
             viewTeamFrame.add(p);
-         }
+        }
 
         JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(new ActionListener() {
@@ -49,7 +49,7 @@ public class ViewTeamActionListener implements ActionListener{
         viewTeamFrame.add(exitButton);
 
         viewTeamFrame.setVisible(true);
-        
+
     }
-    
+
 }
