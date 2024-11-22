@@ -1,0 +1,17 @@
+{
+    "team": [
+      {
+        "name": "John Doe",
+        "position": "Midfielder",
+        "evaluation": 7,
+        "drinkingStatus": true,
+        "attendanceTraining": 0.85,
+        "Injury Status": true,
+        "Sleeping Status": true,
+        "Total Training": 15,
+        "Num Training Attended": 12,
+        "Goal": 5
+      }
+    ]
+  }
+  
