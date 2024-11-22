@@ -18,8 +18,16 @@ A football team's management application to make the managers decision easy and 
 - As a user, I want to be able to save the list of players and their condition to the file
 - As a user, I want to be able to load my team list from file.
 
-
-
+**Instructions for End User**
+- You can find the main display of the team management app once you run the program. 
+- You will be able to find Seven main buttons to click and each will have a role
+- You will be able to add a player to the team when you click the add player button and when you enter the name, position and the evaluation 
+- You will be able to remove the player when you click the remove button and input a name 
+- You will be able to view the list of players in the team once you click the view team button showing name, position and the availability 
+- You will be able to check the availability of the player once you click the check the availability of the player 
+- You will be able to update the status of the player once you check the availability
+- You will be able to save the team data once you click the save team button
+- You will be able to load the team datea once you click the load team buttons
 
 NOTE FOR GRADING TA:
 
