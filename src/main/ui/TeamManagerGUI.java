@@ -16,17 +16,30 @@ public class TeamManagerGUI extends JFrame {
         ui.setVisible(true);
     }
 
-    @SuppressWarnings("methodlength")
     public TeamManagerGUI() {
         team = new Team();
-        cardLayOut = new CardLayout();
-        setSize(600, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        cardLayOut = setCard();
 
         JPanel mainMenuPanel = new JPanel(cardLayOut);
         mainMenuPanel.setLayout(new GridLayout(8, 1));
 
+        addButtons(mainMenuPanel);
+
+        add(mainMenuPanel, BorderLayout.CENTER);
+
+    }
+
+    private CardLayout setCard() {
+
+        cardLayOut = new CardLayout();
+        setSize(600, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+        return cardLayOut;
+
+    }
+
+    private void addButtons(JPanel mainMenuPanel) {
         JButton addPlayerButton = new JButton("Add a Player");
         addPlayerButton.addActionListener(new AddPlayerActionListener(team));
         mainMenuPanel.add(addPlayerButton);
@@ -54,8 +67,6 @@ public class TeamManagerGUI extends JFrame {
         JButton loadButton = new JButton("Load the Team");
         loadButton.addActionListener(new LoadTeamListener(team));
         mainMenuPanel.add(loadButton);
-
-        add(mainMenuPanel, BorderLayout.CENTER);
 
     }
 

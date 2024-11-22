@@ -4,7 +4,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,8 +18,8 @@ public class RemovePlayerActionListener implements ActionListener {
     public RemovePlayerActionListener(Team team) {
         this.team = team;
     }
-    
-    @SuppressWarnings("methodlength")
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         JFrame removePlayerFrame = new JFrame();
@@ -32,6 +31,16 @@ public class RemovePlayerActionListener implements ActionListener {
         JTextField nameField = new JTextField();
         removePlayerFrame.add(nameField);
 
+        addSubmitButton(removePlayerFrame, nameField);
+
+        addCancelButton(removePlayerFrame);
+
+        removePlayerFrame.setVisible(true);
+
+    }
+
+    // EFFECTS: add submit button
+    private void addSubmitButton(JFrame removePlayerFrame, JTextField nameField) {
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -52,7 +61,10 @@ public class RemovePlayerActionListener implements ActionListener {
         });
         removePlayerFrame.add(submitButton);
 
+    }
 
+    // EFFECTS: add cancel Button
+    private void addCancelButton(JFrame removePlayerFrame) {
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new ActionListener() {
             @Override
@@ -62,8 +74,8 @@ public class RemovePlayerActionListener implements ActionListener {
         });
         removePlayerFrame.add(cancelButton);
 
-        removePlayerFrame.setVisible(true);
-
     }
+
+    
 
 }

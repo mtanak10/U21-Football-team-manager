@@ -83,7 +83,7 @@ public class JsonReader {
             player.catchInjury();
         }
         if (sleepingStatus) {
-            player.drink();
+            player.sleep();
         }
         changeAttendance(player, totalTraining, numTrainingAttended, attendanceTraining);
 
