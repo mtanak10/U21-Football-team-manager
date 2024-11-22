@@ -1,3 +1,4 @@
+
 package ui;
 
 import javax.swing.*;
@@ -6,6 +7,7 @@ import model.*;
 
 import java.awt.*;
 
+// Main part of the gui it has the main display
 public class TeamManagerGUI extends JFrame {
 
     private Team team;
@@ -29,6 +31,8 @@ public class TeamManagerGUI extends JFrame {
 
     }
 
+    // Modifies: this
+    // EFFECTS: this will set the card layou and modifies and defines the size
     private CardLayout setCard() {
 
         cardLayOut = new CardLayout();
@@ -39,6 +43,7 @@ public class TeamManagerGUI extends JFrame {
 
     }
 
+    // Effects: add all of the buttons needed to the Jfram main panel
     private void addButtons(JPanel mainMenuPanel) {
         JButton addPlayerButton = new JButton("Add a Player");
         addPlayerButton.addActionListener(new AddPlayerActionListener(team));

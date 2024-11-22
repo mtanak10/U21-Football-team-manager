@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import model.Player;
 import model.Team;
 
+// updates the player's fitness and status
 public class UpdateActionListener implements ActionListener {
     private JFrame updateFrame;
     private Team team;
@@ -161,6 +162,7 @@ public class UpdateActionListener implements ActionListener {
 
     }
 
+    // Effets: checks if the goal is done or not and throwsan exception if the goal < 0
     private int checkGoal(JTextField goalsField) {
 
         try {
