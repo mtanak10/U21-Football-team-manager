@@ -29,6 +29,12 @@ A football team's management application to make the managers decision easy and 
 - You will be able to save the team data once you click the save team button
 - You will be able to load the team datea once you click the load team buttons
 
+
+
+**Phase 4: Task 3** 
+
+If I had more time to work on the project, one refactoring that I would have implemented for Graphical User Interface which had a lot of repeated process such as addition of submit buttons and cancel buttons. This was a process that was needed for all 7 or 8 frames that I made in the ui that I made. However, I was not able to refactor them and I had to implement the creation of submit button for each cases and this made me write a lot of repetitive code. This was one thing that I would be changing for refactoring.If I had more time I would aslo add a feature to classify each players with their age and their positions. This would enable players to be viewed easier and would be better for the user to make a choice on what player would be good to play. These could lead to a creation of the recommendation system on who to play based on their status and evaluation. 
+
 NOTE FOR GRADING TA:
 
 
