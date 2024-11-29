@@ -21,6 +21,8 @@ public class Team implements Writable {
     // Effects: Adds a Player into the list team
     public void addPlayer(Player player) {
         team.add(player);
+        String name = player.getName();
+        EventLog.getInstance().logEvent(new Event("Player added!!!" + " Name: " + name));
     }
 
     // Requires: parameter to be a string and a name that has been added to the team
@@ -28,12 +30,15 @@ public class Team implements Writable {
     // Modifies: this
     // Effects: remove a player from the team list
     public void removePlayer(String name) {
+        String player = "";
         for (int i = 0; i < team.size(); i++) {
             if (team.get(i).getName().equals(name)) {
+                player = team.get(i).getName();
                 team.remove(team.get(i));
                 break;
             }
         }
+        EventLog.getInstance().logEvent(new Event("Player removed!!!" + " Name: " +  player));
     }
 
     public ArrayList<Player> getTeam() {
@@ -84,4 +89,14 @@ public class Team implements Writable {
         }
         return null;
     }
+
+    // EFFECTS: 
+
+    public void printEventLog(){
+        EventLog log = EventLog.getInstance();
+        for(model.Event event : log) {
+            System.out.println(event.toString());
+        }
+    }
+
 }
