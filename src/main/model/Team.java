@@ -38,7 +38,7 @@ public class Team implements Writable {
                 break;
             }
         }
-        EventLog.getInstance().logEvent(new Event("Player removed!!!" + " Name: " +  player));
+        EventLog.getInstance().logEvent(new Event("Player removed!!!" + " Name: " + player));
     }
 
     public ArrayList<Player> getTeam() {
@@ -48,14 +48,14 @@ public class Team implements Writable {
     public int getTotalPlayers() {
         return this.team.size();
     }
-    
-   // Effects this is for checking if a team has a player with the given string
+
+    // Effects this is for checking if a team has a player with the given string
     public Boolean containsName(String name) {
         for (Player p : team) {
             String n = p.getName();
             if (n.equalsIgnoreCase(name)) {
                 return true;
-            } 
+            }
         }
         return false;
     }
@@ -85,16 +85,16 @@ public class Team implements Writable {
             String n = p.getName();
             if (n.equalsIgnoreCase(name)) {
                 return p;
-            } 
+            }
         }
         return null;
     }
 
-    // EFFECTS: 
+    // EFFECTS:
 
-    public void printEventLog(){
+    public void printEventLog() {
         EventLog log = EventLog.getInstance();
-        for(model.Event event : log) {
+        for (model.Event event : log) {
             System.out.println(event.toString());
         }
     }
