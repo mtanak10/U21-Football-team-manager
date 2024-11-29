@@ -29,6 +29,10 @@ public class TeamManagerGUI extends JFrame {
 
         add(mainMenuPanel, BorderLayout.CENTER);
 
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            team.printEventLog();
+        }));
+
     }
 
     // Modifies: this

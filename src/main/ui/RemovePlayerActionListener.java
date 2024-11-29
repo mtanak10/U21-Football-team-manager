@@ -49,7 +49,6 @@ public class RemovePlayerActionListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String name = nameField.getText();
-                System.out.print(name);
 
                 if (team.containsName(name)) {
                     team.removePlayer(name);

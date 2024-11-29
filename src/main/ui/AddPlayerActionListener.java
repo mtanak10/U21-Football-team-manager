@@ -36,8 +36,6 @@ public class AddPlayerActionListener implements ActionListener {
         System.out.println("Add Player button clicked"); // Debug statement
         addPlayerFrame.getContentPane().removeAll();
 
-
-
         addPlayerFrame.add(new JLabel("Name:"));
         JTextField nameField = new JTextField();
         addPlayerFrame.add(nameField);
