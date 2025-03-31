@@ -1,5 +1,47 @@
 # UBC Football Team Management Application
 
+Project Overview
+This app is designed to assist with team management for a non-varsity soccer team at UBC. Its goal is to support coaches in making decisions and selecting the best starting lineup.
+
+By visualizing players' conditions before a game, the app helps coaches decide who should play. It includes features for comparing players’ fitness levels and comparing players within the same position.
+
+A player's condition is defined based on factors such as training attendance, running activity, and pre-game alcohol consumption.
+
+User Stories
+Add players to a list
+
+Categorize players by position
+
+Visually compare player fitness
+
+Remove players from the list
+
+Update players' conditions weekly
+
+Evaluate player condition based on multiple factors
+
+Easily update player data after practices or events
+
+Track and manage players’ goal scores
+
+Compare player ratings
+
+Save player list and condition data to a file
+
+Load player list from a file
+
+Usage Instructions
+When the app is launched, the main screen will appear.
+
+Seven buttons are displayed, each providing access to a different feature.
+
+You can add, remove, view players, update their condition, and save/load data.
+
+
+
+
+JAPANESE VERSION
+
 ## プロジェクト概要
 
 このアプリは、UBCの非バーシティサッカーチームでのチーム管理を支援するためのものです。コーチの意思決定を容易にし、評価の高いスタメンを選択することを目的としています。
