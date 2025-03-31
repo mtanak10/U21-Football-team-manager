@@ -40,7 +40,7 @@ You can add, remove, view players, update their condition, and save/load data.
 
 
 
-JAPANESE VERSION
+# JAPANESE VERSION
 
 ## プロジェクト概要
 
